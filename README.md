@@ -40,7 +40,6 @@ These projects are still being worked on and are not yet ready for primetime.
 This is a list of deprecated or otherwise older or unused projects that were started by the Map project.
 
 - [tilelive-gl](https://github.com/HSLdevcom/tilelive-gl) - a fork of another project called tilelive-gl. This was used until recently in the map-generator-server, but it is unmaintained and requires Node v6. Mapbox-gl-native should be used directly instead.
-- [](https://github.com/HSLdevcom/hsl-map-site)
 
 URLs and endpoints
 ---
