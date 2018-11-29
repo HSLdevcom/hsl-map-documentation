@@ -15,7 +15,6 @@ A list of all current and relevant repositories under the map project umbrella. 
 - [hsl-map-generator-ui](https://github.com/HSLdevcom/hsl-map-generator-ui) - an UI for generating static map images. Essentially a frontend for hsl-map-generator-server.
 - [hsl-map-generator-server](https://github.com/HSLdevcom/hsl-map-generator-server) - the server that generates map images with HSL's map style. Used for stop posters and station maps.
 - [hsl-map-web-ui](https://github.com/HSLdevcom/hsl-map-web-ui) - also known as "kuljettajaohje", it's a relatively simple map app that shows all current HSL routes.
-- [hsl-ticket-zone-map](https://github.com/HSLdevcom/hsl-ticket-zone-map) - a very simple embeddable map that shows the new ticket zones that will come into effect in 2019.
 - [hsl-map-deployer](https://github.com/HSLdevcom/hsl-map-deployer) - contains the docker-compose and ngnix configs that are deployed to the dev and prod servers. All changes to these configs should go through PRs to this repository.
 - [hsl-route-map-poc](https://github.com/HSLdevcom/hsl-route-map-poc) - a simple map app that shows all HSL's routes.
 - [jore-graphql](https://github.com/HSLdevcom/jore-graphql) - a repository containing the Dockerfile that builds the Postgraphile-powered JORE GraphQL API.
@@ -40,6 +39,7 @@ These projects are still being worked on and are not yet ready for primetime.
 This is a list of deprecated or otherwise older or unused projects that were started by the Map project.
 
 - [tilelive-gl](https://github.com/HSLdevcom/tilelive-gl) - a fork of another project called tilelive-gl. This was used until recently in the map-generator-server, but it is unmaintained and requires Node v6. Mapbox-gl-native should be used directly instead.
+- [hsl-ticket-zone-map](https://github.com/HSLdevcom/hsl-ticket-zone-map) - a very simple embeddable map that shows the new ticket zones that will come into effect in 2019. Superseded by the zones showing up in the journey planner (Digitransit).
 
 URLs and endpoints
 ---
