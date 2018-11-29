@@ -9,7 +9,7 @@ Projects and apps
 A list of all current and relevant repositories under the map project umbrella. Each repository includes more detailed documentation.
 
 - [hsl-map-style](https://github.com/HSLdevcom/hsl-map-style) - the Mapbox-compatible vector style for all HSL maps. Used in most other apps.
-- [hsl-map-server](https://github.com/HSLdevcom/hsl-map-server)
+- [hsl-map-server](https://github.com/HSLdevcom/hsl-map-server) - Tessera server that hosts different types of tiles (vector, raster). The server is currently hosted by the Reittiopas team, and this server is responsible for hosting map tiles for all background maps used by HSL.
 - [hsl-map-publisher](https://github.com/HSLdevcom/hsl-map-publisher) - the backend component of the stop poster generator app. Also includes the poster React app and poster parts as SVG files.
 - [hsl-map-publisher-ui](https://github.com/HSLdevcom/hsl-map-publisher-ui) - the frontend component of the stop poster generator app.
 - [hsl-map-generator-ui](https://github.com/HSLdevcom/hsl-map-generator-ui) - an UI for generating static map images. Essentially a frontend for hsl-map-generator-server.
@@ -26,6 +26,9 @@ A list of all current and relevant repositories under the map project umbrella. 
 - [osm2vectortiles](https://github.com/HSLdevcom/osm2vectortiles) - while we are blocked from upgrading to OpenMapTiles (for various reasons and working on it), we have to use this library for generating vector tiles from OSM data.
 - [jore-tileserver](https://github.com/HSLdevcom/jore-tileserver) - Jore stops and routes as vector tiles.
 - [hsl-map-site](https://github.com/HSLdevcom/hsl-map-site) - the working theory is that this redirects from a stop URL to the route planner.
+- [tilelive-hsl-ticket-sale](https://github.com/HSLdevcom/tilelive-hsl-ticket-sales)
+- [tilelive-otp-citybikes](https://github.com/HSLdevcom/tilelive-otp-citybikes)
+- [tilelive-otp-routes](https://github.com/HSLdevcom/tilelive-otp-routes)
 
 ### Unreleased projects
 
@@ -33,6 +36,13 @@ These projects are still being worked on and are not yet ready for primetime.
 
 - [hsl-stop-info](https://github.com/HSLdevcom/hsl-stop-info) - a replacement for the ["Stop tag page"](http://tag.hsl.fi/tag/16682?a) using GatsbyJS and aiming to be a lot more useful.
 - [map-reports](https://github.com/HSLdevcom/map-reports) - a tool for managing reports about OSM faults and validating OSM data. Unfinished and will be moved out of the Map project.
+- [hsl-map-validator](https://github.com/HSLdevcom/hsl-map-validator)
+
+### Need investigation what these are
+- [hsl-stop-info](https://github.com/HSLdevcom/hsl-stop-info)
+- [map-utils](https://github.com/HSLdevcom/map-utils)
+- [pymapmatch](https://github.com/HSLdevcom/pymapmatch)
+- [tile-merge-stream](https://github.com/HSLdevcom/tile-merge-stream)
 
 ### Deprecated or unused projects
 
