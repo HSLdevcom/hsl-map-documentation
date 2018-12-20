@@ -25,10 +25,10 @@ A list of all current and relevant repositories under the map project umbrella. 
 - [hsl-routemap-server](https://github.com/HSLdevcom/hsl-routemap-server) - a spin-off project from the stop poster project for  generating route maps. This is the server component.
 - [osm2vectortiles](https://github.com/HSLdevcom/osm2vectortiles) - while we are blocked from upgrading to OpenMapTiles (for various reasons and working on it), we have to use this library for generating vector tiles from OSM data.
 - [jore-tileserver](https://github.com/HSLdevcom/jore-tileserver) - Jore stops and routes as vector tiles.
-- [hsl-map-site](https://github.com/HSLdevcom/hsl-map-site) - the working theory is that this redirects from a stop URL to the route planner.
-- [tilelive-hsl-ticket-sale](https://github.com/HSLdevcom/tilelive-hsl-ticket-sales)
-- [tilelive-otp-citybikes](https://github.com/HSLdevcom/tilelive-otp-citybikes)
-- [tilelive-otp-routes](https://github.com/HSLdevcom/tilelive-otp-routes)
+- [tilelive-hsl-ticket-sale](https://github.com/HSLdevcom/tilelive-hsl-ticket-sales) - serializes ticket sales vector tiles to protobufs.
+- [tilelive-otp-citybikes](https://github.com/HSLdevcom/tilelive-otp-citybikes) - serializes city bike vector tiles to protobufs.
+- [tilelive-otp-routes](https://github.com/HSLdevcom/tilelive-otp-routes) - serializes otp routes to protobufs.
+- [pymapmatch](https://github.com/HSLdevcom/pymapmatch) - forked helper module used in the geography matcher.
 
 ### Unreleased projects
 
@@ -39,10 +39,8 @@ These projects are still being worked on and are not yet ready for primetime.
 - [hsl-map-validator](https://github.com/HSLdevcom/hsl-map-validator)
 
 ### Need investigation what these are
-- [hsl-stop-info](https://github.com/HSLdevcom/hsl-stop-info)
-- [map-utils](https://github.com/HSLdevcom/map-utils)
-- [pymapmatch](https://github.com/HSLdevcom/pymapmatch)
-- [tile-merge-stream](https://github.com/HSLdevcom/tile-merge-stream)
+
+- [hsl-map-site](https://github.com/HSLdevcom/hsl-map-site) - the working theory is that this redirects from a stop URL to the route planner.
 
 ### Deprecated or unused projects
 
@@ -50,6 +48,8 @@ This is a list of deprecated or otherwise older or unused projects that were sta
 
 - [tilelive-gl](https://github.com/HSLdevcom/tilelive-gl) - a fork of another project called tilelive-gl. This was used until recently in the map-generator-server, but it is unmaintained and requires Node v6. Mapbox-gl-native should be used directly instead.
 - [hsl-ticket-zone-map](https://github.com/HSLdevcom/hsl-ticket-zone-map) - a very simple embeddable map that shows the new ticket zones that will come into effect in 2019. Superseded by the zones showing up in the journey planner (Digitransit).
+- [tile-merge-stream](https://github.com/HSLdevcom/tile-merge-stream) - helper module. Not used as far as we know.
+- [map-utils](https://github.com/HSLdevcom/map-utils) - Python map utils and a stop query in Javascript. Unused as far as we know.
 
 URLs and endpoints
 ---
@@ -62,6 +62,6 @@ These are the most important URL's and endpoints we use in the map project. Cons
 - [/kartta](http://kartat.hsl.fi/kartta/) - the url for the map generator UI. Project: [hsl-map-generator-ui](https://github.com/HSLdevcom/hsl-map-generator-ui).
 - [/generateImage](http://kartat.hsl.fi/generateImage) - the POST endpoint for the map generator server. Check projects that use it for usage, like generator-ui and publisher. Project: [hsl-map-generator-server](https://github.com/HSLdevcom/hsl-map-generator-server).
 - [/linjakartta](http://kartat.hsl.fi/linjakartta/) - where you can view the simple route map. Project: [hsl-route-map-poc](https://github.com/HSLdevcom/hsl-route-map-poc).
-- [/julkaisin (dev)](https://dev-kartat.hsldev.com/julkaisin/) - this is the UI of the service that generates stop posters.
+- [/julkaisin](http://kartat.hsl.fi/julkaisin/) - this is the UI of the service that generates stop posters.
 - [/jore/graphql](http://kartat.hsl.fi/jore/graphql) - the graphQL endpoint for the JORE API. Contains a subset of data from the JORE database. POST only. Replace the last segment with `/graphiql` to access the Graph*i*QL documentation. Projects: [jore-graphql](https://github.com/HSLdevcom/jore-graphql) and [jore-graphql-import](https://github.com/HSLdevcom/jore-graphql-import).
 - [/jore-history/graphql (dev)](https://dev-kartat.hsldev.com/jore-history/graphql) - the graphQL endpoint for the JORE _history_ API. Contains historical data from the JORE database going back a year or so. POST only. Replace the last segment with `/graphiql` to access the Graph*i*QL documentation. Projects: [jore-history-graphql](https://github.com/HSLdevcom/jore-history-graphql) and [jore-history-graphql-import](https://github.com/HSLdevcom/jore-history-graphql-import).
