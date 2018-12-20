@@ -17,6 +17,7 @@ A list of all current and relevant repositories under the map project umbrella. 
 - [hsl-map-web-ui](https://github.com/HSLdevcom/hsl-map-web-ui) - also known as "kuljettajaohje", it's a relatively simple map app that shows all current HSL routes.
 - [hsl-map-deployer](https://github.com/HSLdevcom/hsl-map-deployer) - contains the docker-compose and ngnix configs that are deployed to the dev and prod servers. All changes to these configs should go through PRs to this repository.
 - [hsl-route-map-poc](https://github.com/HSLdevcom/hsl-route-map-poc) - a simple map app that shows all HSL's routes.
+- [hsl-map-site](https://github.com/HSLdevcom/hsl-map-site) - The application redirects from a stop URL to the route planner.
 - [jore-graphql](https://github.com/HSLdevcom/jore-graphql) - a repository containing the Dockerfile that builds the Postgraphile-powered JORE GraphQL API.
 - [jore-graphql-import](https://github.com/HSLdevcom/jore-graphql-import) - the data importer for the JORE GraphQL API. Contains the schema for the PostgreSQL database as well as SQL functions and data import logic. It runs from a Docker container that automatically downloads the newest JORE export and imports it into the jore-graphql PostgreSQL database, _overwriting_ the previous data.
 - [jore-geometry-matcher](https://github.com/HSLdevcom/jore-geometry-matcher) - this should be executed after running `jore-graphql-import` to smoothen out the routes and match them to map geometry.
@@ -37,10 +38,6 @@ These projects are still being worked on and are not yet ready for primetime.
 - [hsl-stop-info](https://github.com/HSLdevcom/hsl-stop-info) - a replacement for the ["Stop tag page"](http://tag.hsl.fi/tag/16682?a) using GatsbyJS and aiming to be a lot more useful.
 - [map-reports](https://github.com/HSLdevcom/map-reports) - a tool for managing reports about OSM faults and validating OSM data. Unfinished and will be moved out of the Map project.
 - [hsl-map-validator](https://github.com/HSLdevcom/hsl-map-validator)
-
-### Need investigation what these are
-
-- [hsl-map-site](https://github.com/HSLdevcom/hsl-map-site) - the working theory is that this redirects from a stop URL to the route planner.
 
 ### Deprecated or unused projects
 
