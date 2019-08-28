@@ -1,10 +1,10 @@
-HSL Map project
-===
+# HSL Map project
 
 This is a collection repository for links and general documentation about all projects belonging to the Map project.
 
-Projects and apps
----
+## Architecture and data flow [diagrams](Process%20schema/README.md)
+
+## Projects and apps
 
 A list of all current and relevant repositories under the map project umbrella. Each repository includes more detailed documentation.
 
@@ -23,7 +23,7 @@ A list of all current and relevant repositories under the map project umbrella. 
 - [jore-geometry-matcher](https://github.com/HSLdevcom/jore-geometry-matcher) - this should be executed after running `jore-graphql-import` to smoothen out the routes and match them to map geometry.
 - [jore-history-graphql](https://github.com/HSLdevcom/jore-history-graphql) - a separate `jore-graphql` instance that contains historical JORE data. Uses a modified importer that does not overwrite data. Used by the Transitlog project.
 - [jore-history-graphql-import](https://github.com/HSLdevcom/jore-history-graphql-import) - a modified version of `jore-graphql-import` that does not overwrite previous data when importing. Used for displaying historical route and stop data in the Transitlog project.
-- [hsl-routemap-server](https://github.com/HSLdevcom/hsl-routemap-server) - a spin-off project from the stop poster project for  generating route maps. This is the server component.
+- [hsl-routemap-server](https://github.com/HSLdevcom/hsl-routemap-server) - a spin-off project from the stop poster project for generating route maps. This is the server component.
 - [osm2vectortiles](https://github.com/HSLdevcom/osm2vectortiles) - while we are blocked from upgrading to OpenMapTiles (for various reasons and working on it), we have to use this library for generating vector tiles from OSM data.
 - [jore-tileserver](https://github.com/HSLdevcom/jore-tileserver) - Jore stops and routes as vector tiles.
 - [tilelive-hsl-ticket-sale](https://github.com/HSLdevcom/tilelive-hsl-ticket-sales) - serializes ticket sales vector tiles to protobufs.
@@ -48,8 +48,7 @@ This is a list of deprecated or otherwise older or unused projects that were sta
 - [tile-merge-stream](https://github.com/HSLdevcom/tile-merge-stream) - helper module. Not used as far as we know.
 - [map-utils](https://github.com/HSLdevcom/map-utils) - Python map utils and a stop query in Javascript. Unused as far as we know.
 
-URLs and endpoints
----
+## URLs and endpoints
 
 These are the most important URL's and endpoints we use in the map project. Consult the readme of the specific project you are working on for more detailed information.
 
