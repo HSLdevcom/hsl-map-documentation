@@ -30,7 +30,3 @@ docker run --rm -it --name dcv -v $(pwd):/input pmsipilot/docker-compose-viz ren
 ```
 
 This will generate the `docker-compose.png` file in the current working directory.
-
-## Deprecated schema diagram (K5)
-
-![Process schema](diagram.png)
