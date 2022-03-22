@@ -31,6 +31,15 @@ A list of all current and relevant repositories under the map project umbrella. 
 - [tilelive-otp-citybikes](https://github.com/HSLdevcom/tilelive-otp-citybikes) - serializes city bike vector tiles to protobufs.
 - [tilelive-otp-stops](https://github.com/HSLdevcom/tilelive-otp-stops) - serializes otp stops to protobufs.
 - [tilelive-gl](https://github.com/HSLdevcom/tilelive-gl) - a fork of another project called tilelive-gl. This was used until recently in the `map-generator-server`, and still in `hsl-map-server`. The main repo is unmaintained, Mapbox-gl-native should be used directly instead.
+- [orthotiles](https://github.com/HSLdevcom/orthotiles) Occassionally used scripts and instructions to generate new orthoimagenary for HSL.
+
+### Unreleased projects
+
+These projects are still being worked on and are not yet ready for primetime. Some of them could be discarded and the release is unsure.
+- [transitlog-alert-proxy](https://github.com/HSLdevcom/transitlog-alert-proxy/) Proxy for reading transitlog (Reittiloki) alerts for hsl-map-web-ui
+- [hsl-stop-info](https://github.com/HSLdevcom/hsl-stop-info) - a replacement for the ["Stop tag page"](http://tag.hsl.fi/tag/16682?a) using GatsbyJS and aiming to be a lot more useful.
+- [map-reports](https://github.com/HSLdevcom/map-reports) - a tool for managing reports about OSM faults and validating OSM data. Unfinished and will be moved out of the Map project.
+- [hsl-map-validator](https://github.com/HSLdevcom/hsl-map-validator)
 
 
 ### Deprecated or unused projects
@@ -43,10 +52,9 @@ This is a list of deprecated or otherwise older or unused projects that were sta
 - [tile-merge-stream](https://github.com/HSLdevcom/tile-merge-stream) - helper module. Not used as far as we know.
 - [map-utils](https://github.com/HSLdevcom/map-utils) - Python map utils and a stop query in Javascript. Unused as far as we know.
 - [hsl-map-deployer](https://github.com/HSLdevcom/hsl-map-deployer) - deprecated repository for deploying projects into dev & prod servers. Contains the docker-compose and ngnix configs. This can be used for creating local dev environment.
-- [hsl-stop-info](https://github.com/HSLdevcom/hsl-stop-info) - a replacement for the ["Stop tag page"](http://tag.hsl.fi/tag/16682?a) using GatsbyJS and aiming to be a lot more useful.
-- [map-reports](https://github.com/HSLdevcom/map-reports) - a tool for managing reports about OSM faults and validating OSM data. Unfinished and will be moved out of the Map project.
-- [hsl-map-validator](https://github.com/HSLdevcom/hsl-map-validator)
 - [tilelive-otp-routes](https://github.com/HSLdevcom/tilelive-otp-routes) - serializes otp routes to protobufs.
+- [hsl-map-deployer](https://github.com/HSLdevcom/hsl-map-deployer) Reverse proxy and deployer for hsl-map and jore- repositories. Deprecated after environment change.
+
 
 
 ## URLs and endpoints
