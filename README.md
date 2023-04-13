@@ -8,7 +8,7 @@ This is a collection repository for links and general documentation about all pr
 
 A list of all current and relevant repositories under the map project umbrella. Each repository includes more detailed documentation.
 
-- [hsl-map-publisher](https://github.com/HSLdevcom/hsl-map-publisher) - the backend component of the stop poster generator app. Also includes the poster React app and poster parts as SVG files. Also the base of [hsl-timetable-container](https://github.com/HSLdevcom/hsl-timetable-container) hosted by Digitransit team
+- [hsl-map-publisher](https://github.com/HSLdevcom/hsl-map-publisher) - the backend component of the stop poster generator app. Also includes the poster React app and poster parts as SVG files. Also the base of[hsl-timetable-container](https://github.com/HSLdevcom/hsl-timetable-container) hosted by Digitransit team
 - [hsl-map-publisher-ui](https://github.com/HSLdevcom/hsl-map-publisher-ui) - the frontend component of the stop poster generator app.
 - [hsl-routemap-server](https://github.com/HSLdevcom/hsl-routemap-server) - a spin-off project from the stop poster project for generating route maps. This is the server component.
 - [hsl-map-generator-server](https://github.com/HSLdevcom/hsl-map-generator-server) - the server that generates map images with HSL's map style. Used for stop posters and station maps.
@@ -68,4 +68,5 @@ These are the most important URL's and endpoints we use in the map project. Cons
 - [/map-generator/generateImage](https://kartat.hsl.fi/map-generator/generateImage) - the POST endpoint for the map generator server. Check projects that use it for usage, like generator-ui and publisher. Project: [hsl-map-generator-server](https://github.com/HSLdevcom/hsl-map-generator-server).
 - [/linjakartta](https://kartat.hsl.fi/linjakartta/) - where you can view the simple route map. Project: [hsl-route-map-poc](https://github.com/HSLdevcom/hsl-route-map-poc).
 - [/julkaisin](https://kartat.hsl.fi/julkaisin/) - this is the UI of the service that generates stop posters. Requires login.
+- [/julkaisin-render](https://kartat.hsl.fi/julkaisin-render/) - Rendering service for stop poster generation, used with ```julkaisin-server``` API [Documented on Swagger](./Swagger/README)
 - [/jore/graphql](https://kartat.hsl.fi/jore/graphql) - the graphQL endpoint for the JORE API. Contains a subset of data from the JORE database. POST only. Replace the last segment with `/graphiql` to access the Graph*i*QL documentation. Projects: [jore-graphql](https://github.com/HSLdevcom/jore-graphql) and [jore-graphql-import](https://github.com/HSLdevcom/jore-graphql-import).
