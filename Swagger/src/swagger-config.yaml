@@ -55,26 +55,63 @@ paths:
               schema:
                 example: { renderUrl: "https://dev.kartat.hsl.fi/julkaisin-render/?component=Timetable&props%5BstopId%5D=1010109&props%5Bdate%5D=2023-05-06" }
   
-  /julkaisin/generateRenderUrl:
-    post:
-      summary: "Generate a render url for timetable rendering"
+  /jore/tiles/{layer}/index.json:
+    get:
+      summary: "TileJSON info endpoint for a layer"
       tags:
         - JORE Tileserver
-      requestBody:
-        description: Properties for the timetable to render
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Timetable'
+      parameters:
+        - in: path
+          name: layer
+          required: true
+          schema:
+            type: string
+            enum: ['stops', 'routes', 'terminals', 'regular-routes', 'regular-stops', 'near-bus-routes', 'near-bus-stops', 'stops-by-routes']
+            example: stops
       responses:
-        400:
-          description: "Bad request"
         200:
-          description: "OK"
+          description: "Returns TileJSON info of the requested layer"
           content:
             application/json:
               schema:
-                example: { renderUrl: "https://dev.kartat.hsl.fi/julkaisin-render/?component=Timetable&props%5BstopId%5D=1010109&props%5Bdate%5D=2023-05-06" }
+                example: {"tilejson":"2.2.0","tiles":["https://dev.kartat.hsl.fi/jore/tiles/stops/{z}/{x}/{y}.pbf"]}
+  
+  /jore/tiles/{layer}/{x}/{y}/{z}.pbf:
+    get:
+      summary: "Tile endpoint for selected layer"
+      tags:
+        - JORE Tileserver
+      parameters:
+        - in: path
+          name: layer
+          required: true
+          schema:
+            type: string
+            enum: ['stops', 'routes', 'terminals', 'regular-routes', 'regular-stops', 'near-bus-routes', 'near-bus-stops', 'stops-by-routes']
+            example: stops
+        - in: path
+          name: x
+          required: true
+          schema:
+            type: number
+            example: 60.22604
+            minimum: 2
+        - in: path
+          name: y
+          required: true
+          schema:
+            type: number
+            example: 24.84975
+            minimum: 2
+        - in: path
+          name: z
+          required: true
+          schema:
+            type: number
+            example: 14.5
+            minimum: 1
+      responses:
+        200:
+          description: "Returns a PBF tile from the coordinates"
   
   
