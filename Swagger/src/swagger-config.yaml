@@ -1,0 +1,117 @@
+openapi: "3.0.0"
+info:
+  version: "0.0.1"
+  title: "HSL Map project Documentation"
+  description: "Documents HSL Map project API endpoints"
+servers:
+  - url: "https://dev.kartat.hsl.fi/"
+    description: "HSL Karttatuotanto Dev Environment"
+  - url: "https://kartat.hsl.fi/"
+    description: "HSL Karttatuotanto Prod Environment"
+
+components:
+  schemas:
+    Timetable:
+      properties:
+        props:
+          type: object
+          properties:
+            stopId:
+              type: string
+            date:
+              type: string
+            isSummerTimetable:
+              type: boolean
+              default: false
+            printTimetablesAsA4:
+              type: boolean
+            printTimetablesAsGreyscale:
+              type: boolean
+              default: false
+            template:
+              type: string
+              default: 'default'
+
+paths:
+  /julkaisin-render/generateRenderUrl:
+    post:
+      summary: "Generate a render url for timetable rendering"
+      tags:
+        - Map Publisher
+      requestBody:
+        description: Properties for the timetable to render
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Timetable'
+      responses:
+        400:
+          description: "Bad request"
+        200:
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                example: { renderUrl: "https://dev.kartat.hsl.fi/julkaisin-render/?component=Timetable&props%5BstopId%5D=1010109&props%5Bdate%5D=2023-05-06" }
+  
+  /jore/tiles/{layer}/index.json:
+    get:
+      summary: "TileJSON info endpoint for a layer"
+      tags:
+        - JORE Tileserver
+      parameters:
+        - in: path
+          name: layer
+          required: true
+          schema:
+            type: string
+            enum: ['stops', 'routes', 'terminals', 'regular-routes', 'regular-stops', 'near-bus-routes', 'near-bus-stops', 'stops-by-routes']
+            example: stops
+      responses:
+        200:
+          description: "Returns TileJSON info of the requested layer"
+          content:
+            application/json:
+              schema:
+                example: {"tilejson":"2.2.0","tiles":["https://dev.kartat.hsl.fi/jore/tiles/stops/{z}/{x}/{y}.pbf"]}
+  
+  /jore/tiles/{layer}/{x}/{y}/{z}.pbf:
+    get:
+      summary: "Tile endpoint for selected layer"
+      tags:
+        - JORE Tileserver
+      parameters:
+        - in: path
+          name: layer
+          required: true
+          schema:
+            type: string
+            enum: ['stops', 'routes', 'terminals', 'regular-routes', 'regular-stops', 'near-bus-routes', 'near-bus-stops', 'stops-by-routes']
+            example: stops
+        - in: path
+          name: x
+          required: true
+          schema:
+            type: integer
+            example: 60
+            minimum: 2
+        - in: path
+          name: y
+          required: true
+          schema:
+            type: integer
+            example: 24
+            minimum: 2
+        - in: path
+          name: z
+          required: true
+          schema:
+            type: integer
+            example: 14
+            minimum: 1
+      responses:
+        200:
+          description: "Returns a PBF tile from the coordinates"
+  
+  
