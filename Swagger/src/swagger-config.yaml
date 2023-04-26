@@ -93,22 +93,22 @@ paths:
           name: x
           required: true
           schema:
-            type: number
-            example: 60.22604
+            type: integer
+            example: 60
             minimum: 2
         - in: path
           name: y
           required: true
           schema:
-            type: number
-            example: 24.84975
+            type: integer
+            example: 24
             minimum: 2
         - in: path
           name: z
           required: true
           schema:
-            type: number
-            example: 14.5
+            type: integer
+            example: 14
             minimum: 1
       responses:
         200:
