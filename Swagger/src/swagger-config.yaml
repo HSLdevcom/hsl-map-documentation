@@ -31,6 +31,14 @@ components:
             template:
               type: string
               default: 'default'
+            routeFilter:
+              type: string
+              description: 'Route filtering works by filtering out the lines sent with this parameter. For example if lines 7, 8 and 9 would belong to this stops timetable this filter would make the timetable only display route 9 in the timetable' 
+              default: '7, 8'
+            redirect:
+              type: boolean
+              default: false
+              description: 'When enabled, responds with a redirect response instead of the url in the response body for example for allowing the developer to guide the end-user directly into the rendering page when embedding this functionality onto another page.'
 
 paths:
   /julkaisin-render/generateRenderUrl:
