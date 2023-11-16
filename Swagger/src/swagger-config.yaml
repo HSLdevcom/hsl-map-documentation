@@ -43,6 +43,11 @@ components:
               type: boolean
               default: false
               description: 'Show a print button on the rendered timetable'
+            lang: 
+              type: string
+              enum: [fi, sv, en]
+              default: fi
+              description: "Change the 'print schedule' button's language"
             redirect:
               type: boolean
               default: false
