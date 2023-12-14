@@ -31,6 +31,7 @@ A list of all current and relevant repositories under the map project umbrella. 
 - [tilelive-otp-citybikes](https://github.com/HSLdevcom/tilelive-otp-citybikes) - serializes city bike vector tiles to protobufs.
 - [tilelive-otp-stops](https://github.com/HSLdevcom/tilelive-otp-stops) - serializes otp stops to protobufs.
 - [tilelive-gl](https://github.com/HSLdevcom/tilelive-gl) - a fork of another project called tilelive-gl. This was used until recently in the `map-generator-server`, and still in `hsl-map-server`. The main repo is unmaintained, Mapbox-gl-native should be used directly instead.
+- [tilelive-geojson](https://github.com/HSLdevcom/tilelive-geojson) - Used in [hsl-map-server](https://github.com/HSLdevcom/hsl-map-server) to create vector tiles from GeoJSON files for custom layers.
 - [orthotiles](https://github.com/HSLdevcom/orthotiles) Occassionally used scripts and instructions to generate new orthoimagenary for HSL.
 
 ### Unreleased projects
