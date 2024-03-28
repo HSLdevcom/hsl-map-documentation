@@ -13,13 +13,19 @@ components:
   schemas:
     Timetable:
       properties:
+        component: 
+          type: string
+          default: "Timetable"
+          description: "Render a Stop timetable"
         props:
           type: object
           properties:
             stopId:
               type: string
+              default: '1010109'
             date:
               type: string
+              default: '2024-03-28'
             isSummerTimetable:
               type: boolean
               default: false
@@ -39,6 +45,39 @@ components:
               type: boolean
               default: false
               description: 'Show address info on the rendered timetable'
+            redirect:
+              type: boolean
+              default: false
+              description: 'When enabled, responds with a redirect response instead of the url in the response body for example for allowing the developer to guide the end-user directly into the rendering page when embedding this functionality onto another page.'
+    LineTimetable:
+      properties:
+        component: 
+          type: string
+          default: "LineTimetable"
+          description: "Render a Line timetable"
+        props:
+          type: object
+          properties:
+            lineId:
+              type: string
+              default: '2015'
+              description: 'Line ID string'
+            routeDirection:
+              type: string
+              default: '1'
+              description: 'The direction of the route that is to be displayed'
+            dateBegin:
+              type: string
+              default: '1999-02-02'
+              description: 'The starting date of the line. Used to filter the correct line from JORE data'
+            dateEnd:
+              type: string
+              default: '2050-12-31'
+              description: 'The end date of the line. Used to filter the correct line from JORE data'
+            date:
+              type: string
+              default: '2024-03-07'
+              description: 'The date which to filter departures to. Used to fetch correct departures of the selected route from JORE data'
             showPrintButton: 
               type: boolean
               default: false
@@ -49,32 +88,39 @@ components:
               default: fi
               description: "Change the 'print schedule' button's language"
             redirect:
-              type: boolean
-              default: false
-              description: 'When enabled, responds with a redirect response instead of the url in the response body for example for allowing the developer to guide the end-user directly into the rendering page when embedding this functionality onto another page.'
+                type: boolean
+                default: false
+                description: 'When enabled, responds with a redirect response instead of the url in the response body for example for allowing the developer to guide the end-user directly into the rendering page when embedding this functionality onto another page.'
 
 paths:
-  /julkaisin-render/generateRenderUrl:
+  /julkaisin-api/generateRenderUrl:
     post:
       summary: "Generate a render url for timetable rendering"
       tags:
         - Map Publisher
       requestBody:
-        description: Properties for the timetable to render
+        description: Includes the `component` and the `props` for the selected timetable type.
         required: true
         content:
-          application/json:
+          Timetable (application/json):
             schema:
               $ref: '#/components/schemas/Timetable'
+          LineTimetable (application/json):
+            schema:
+              $ref: '#/components/schemas/LineTimetable'
+                  
       responses:
         400:
           description: "Bad request"
         200:
           description: "OK"
           content:
-            application/json:
+            Timetable (application/json):
               schema:
-                example: { renderUrl: "https://dev.kartat.hsl.fi/julkaisin-render/?component=Timetable&props%5BstopId%5D=1010109&props%5Bdate%5D=2023-11-06" }
+                example: { renderUrl: "https://dev.kartat.hsl.fi/julkaisin-render/?component=Timetable&props%5BstopId%5D=1010109&props%5Bdate%5D=2024-03-28&props%5BisSummerTimetable%5D=false&props%5BprintTimetablesAsA4%5D=true&props%5BprintTimetablesAsGreyscale%5D=false&props%5Btemplate%5D=default&props%5BshowAddressInfo%5D=false&props%5BshowPrintButton%5D=true&props%5Bredirect%5D=false&props%5Blang%5D=fi" }
+            LineTimetable (application/json):
+              schema:
+                example: { renderUrl: "https://dev.kartat.hsl.fi/julkaisin-render/?component=LineTimetable&props%5BlineId%5D=2015&props%5BrouteDirection%5D=1&props%5Bdate%5D=2024-03-07&props%5BdateBegin%5D=1999-02-02&props%5BdateEnd%5D=2050-12-31&props%5BshowPrintButton%5D=true&props%5Blang%5D=fi&props%5Bredirect%5D=false" }
   
   /jore/tiles/{layer}/index.json:
     get:
