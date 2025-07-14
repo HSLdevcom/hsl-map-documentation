@@ -62,27 +62,33 @@ components:
               type: string
               default: '2015'
               description: 'Line ID string'
+              required: true
             dateBegin:
               type: string
               default: '1999-02-02'
-              description: 'The starting date of the line. Used to filter the correct line from JORE data'
+              description: 'The starting date of the line. Used to filter the correct line from JORE data. If dates are omitted, the endpoint returns line timetables for the current week.'
+              required: false
             dateEnd:
               type: string
               default: '2050-12-31'
-              description: 'The end date of the line. Used to filter the correct line from JORE data'
+              description: 'The end date of the line. Used to filter the correct line from JORE data. If dates are omitted, the endpoint returns line timetables for the current week.'
+              required: false
             showPrintButton: 
               type: boolean
               default: false
               description: 'Show a print button on the rendered timetable'
+              required: false
             lang: 
               type: string
               enum: [fi, sv, en]
               default: fi
               description: "Change the 'print schedule' button's language"
+              required: false
             redirect:
                 type: boolean
                 default: false
                 description: 'When enabled, responds with a redirect response instead of the url in the response body for example for allowing the developer to guide the end-user directly into the rendering page when embedding this functionality onto another page.'
+                required: false
 
 paths:
   /julkaisin-api/generateRenderUrl:
