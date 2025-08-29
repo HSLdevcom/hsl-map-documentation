@@ -114,6 +114,53 @@ paths:
               schema:
                 example: { renderUrl: "https://dev.kartat.hsl.fi/julkaisin-render/?component=LineTimetable&props%5BlineId%5D=2015&props%5BdateBegin%5D=2024-12-01&props%5BdateEnd%5D=2024-12-31&props%5BshowPrintButton%5D=true&props%5Blang%5D=fi&props%5Bredirect%5D=false" }
   
+  /julkaisin-api/weeklyLineTimetable/:lineId:
+    get:
+      summary: "Weekly Line Timetable endpoint"
+      tags:
+        - Map Publisher
+      parameters:
+        - in: path
+          name: lineId
+          required: true
+          schema:
+            type: string
+            example: '2015'
+            description: 'Line ID string'
+        - in: query
+          name: redirect
+          required: false
+          schema:
+            type: boolean
+            example: false
+            default: false
+            description: 'When enabled, responds with a redirect response instead of the url in the response body for example for allowing the developer to guide the end-user directly into the rendering page when embedding this functionality onto another page.'
+        - in: query
+          name: showPrintButton
+          required: false
+          schema:
+            type: boolean
+            example: false
+            default: false
+            description: 'Show a "print timetable" button on the rendered timetable'
+        - in: query
+          name: lang
+          required: false
+          schema:
+            type: string
+            example: 'fi/sv/en'
+            default: 'fi'
+            description: 'Change the "print schedule" button language'
+      responses:
+        400:
+          description: "Bad request"
+        200:
+          description: "OK"
+          content:
+              LineTimetable (application/json):
+                schema:
+                example: { renderUrl: "https://dev.kartat.hsl.fi/julkaisin-render/?component=LineTimetable&props%5BlineId%5D=2015&props%5BdateBegin%5D=2024-12-01&props%5BdateEnd%5D=2024-12-31&props%5BshowPrintButton%5D=true&props%5Blang%5D=fi&props%5Bredirect%5D=false" }
+  
   /jore/tiles/{layer}/index.json:
     get:
       summary: "TileJSON info endpoint for a layer"
