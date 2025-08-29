@@ -10,6 +10,5 @@ const ui = SwaggerUI({
 
 ui.initOAuth({
   appName: "HSL Map Publisher documentation",
-  // See https://demo.identityserver.io/ for configuration details.
   clientId: 'implicit'
 });
