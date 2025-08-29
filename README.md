@@ -19,6 +19,7 @@ A list of all current and relevant repositories under the map project umbrella. 
 
 - [hsl-jore-postgis](https://github.com/HSLdevcom/hsl-jore-postgis) a repository containing build scripts for PostgreSQL database for storing Jore data
 - [jore-graphql-import](https://github.com/HSLdevcom/jore-graphql-import) - the data importer for the JORE GraphQL API. Contains the schema for the PostgreSQL database as well as SQL functions and data import logic. It runs from a Docker container that automatically downloads the newest JORE export and imports it into the jore-graphql PostgreSQL database, _overwriting_ the previous data.
+- [hsl-map-matcher](https://github.com/HSLdevcom/hsl-map-matcher) - Smoothens out routes and matches them to the map geometry. Is used during the `jore-graphql-import` import process, but is ran as a separate service in the same environment.
 - [jore-graphql](https://github.com/HSLdevcom/jore-graphql) - a repository containing the Dockerfile that builds the Postgraphile-powered JORE GraphQL API from `hsl-jore-postgis`.
 - [jore-tileserver](https://github.com/HSLdevcom/jore-tileserver) - Jore stops and routes from `hsl-jore-postgis` as vector tiles.
 
@@ -47,7 +48,7 @@ These projects are still being worked on and are not yet ready for primetime. So
 
 This is a list of deprecated or otherwise older or unused projects that were started by the Map project.
 
-- [jore-geometry-matcher](https://github.com/HSLdevcom/jore-geometry-matcher) - this should be executed after running `jore-graphql-import` to smoothen out the routes and match them to map geometry. Currently integrated to `jore-graphql-import` repository
+- [jore-geometry-matcher](https://github.com/HSLdevcom/jore-geometry-matcher) - this should be executed after running `jore-graphql-import` to smoothen out the routes and match them to map geometry. Current implementation uses [hsl-map-matcher](https://github.com/HSLdevcom/hsl-map-matcher) service that is ran alongside `jore-graphql-import` import process.
 - [pymapmatch](https://github.com/HSLdevcom/pymapmatch) - forked helper module used in the `jore-geometry-matcher`.
 - [hsl-ticket-zone-map](https://github.com/HSLdevcom/hsl-ticket-zone-map) - a very simple embeddable map that shows the new ticket zones that will come into effect in 2019. Superseded by the zones showing up in the journey planner (Digitransit).
 - [tile-merge-stream](https://github.com/HSLdevcom/tile-merge-stream) - helper module. Not used as far as we know.
